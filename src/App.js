@@ -107,9 +107,14 @@ export default function App() {
   console.log(min(10, 4));
 
 
+
   // Übung 5: Array-Methoden
   const numbers = [1, 2, 3, 4, 5];
+  // Elemente in einem Array können alle beliebigen Datentypen sein und werden einzig über ihre Position indiziert
+  const element = numbers[3]  // --> 4
+  // [-1] wie in Python get nicht, aber [array.length - 1] macht das selbe
 
+  // Über Liste iterieren
   // 5.1 map()
   const tripled = numbers.map((num) => num * 3);
   console.log(tripled);   // [3, 6, 9, 12, 15]
@@ -117,18 +122,37 @@ export default function App() {
   const multipliedByIndex = numbers.map((num, index) => num * index);
   console.log(multipliedByIndex); // [0, 2, 6, 12, 20]
 
+  // Über Liste iterieren
   // 5.2 filter()
-  const userNames = ["Matteo", "Dario", "Florin", "Loius", "Mike"];
+  const userNames = ["Matteo", "Dario", "Florin", "Loius"];
 
   const namesWithA = userNames.filter((username) => username.includes("a"));
   console.log(namesWithA); // ["Matteo", "Dario"]
 
+  const usersTransformed = userNames.map((username) => username + "_Geoschwanz");
+  console.log(userNames);   // ["Matteo", "Dario", "Florin", "Loius"]
+  console.log(usersTransformed);  // ["Matteo_Geoschwanz", "Dario_Geoschwanz", "Florin_Geoschwanz", "Loius_Geoschwanz"]
+
+
+  // Array = Liste vob Elementen / Werten
+  // Arrays = geordnet
+  // Arrays = Element werden über ihren Index gefunden
+
+
+  const object = {
+    meinString: "User",
+    meineNummer: 3,
+    meinArray: [1,4,67],
+    meinObject: {Schlüssel: Wert},
+  }
+
+  // Objekt = Liste von Schlüssel-Wert-Paaren
+  // Objekte = ungeordnet
+  // Objekte = Werte werden über Schlüssel identifiziert
 
   return (
     /* HTML hier: + JavaScript in {} möglich */
 
-
-    // Übung 2: Ternärer Operator im HTML-Teil
     <div>
       <p style={{ color: isTheTruth ? "green" : "red" }}>
         Das ist ein Beispielsatz.
@@ -138,6 +162,10 @@ export default function App() {
       <div>Hallo Snickers {a}</div>
       <div>{userRole}</div>
       <div style={{ backgroundColor: role === "Admin" ? "lightblue" : "red" }}>Usergroup</div>
+      {element}
+      {userNames.map((user) => (<li>{user}</li>))}
+      <div> {object.meinArray} </div>
+      <div> {object["meineNummer"]} </div>
     </div>
   );
 }
