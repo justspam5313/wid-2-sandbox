@@ -1,14 +1,14 @@
 export default function App() {
   /*
    *
-   *    JAVASCRIPT hier
+   *    JAVASCRIPT hier:
    *
    */
 
   return (
     /*
      *
-     *    HTML hier
+     *    HTML hier:
      *    + JavaScript in {} möglich
      *
      */
