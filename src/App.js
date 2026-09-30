@@ -1,9 +1,8 @@
+  // nicht hier
+
 export default function App() {
-  /*
-   *
-   *    JAVASCRIPT hier:
-   *
-   */
+
+
 
   return (
     /*
